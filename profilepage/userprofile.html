@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="userprofile.css">
+</head>
+<body>
+
+    <div id="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Memuat detail profil...</p>
+    </div>
+
+    <main id="profile-container" class="hidden">
+        <section class="profile-card">
+            
+            <div class="card-header">
+                <img id="profile-picture" src="" alt="User Profile Picture" class="profile-img">
+            </div>
+
+            <div class="card-body">
+                <h1 id="user-name" class="user-name"></h1>
+                <p id="user-username" class="username"></p>
+                <p id="user-age-gender" class="age-gender"></p>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="about"><i class="fas fa-user-circle"></i> About</button>
+                    <button class="tab-btn" data-tab="contact"><i class="fas fa-phone-alt"></i> Contact</button>
+                    <button class="tab-btn" data-tab="account"><i class="fas fa-lock"></i> Account</button>
+                </div>
+
+                <div class="tab-content-container">
+                    
+                    <div id="about" class="tab-content active">
+                        <div class="info-group">
+                            <i class="fas fa-calendar-alt icon"></i>
+                            <span class="info-label">Date of Birth:</span>
+                            <span id="user-dob-date" class="info-value"></span>
+                        </div>
+                         <div class="info-group">
+                            <i class="fas fa-birthday-cake icon"></i>
+                            <span class="info-label">Age:</span>
+                            <span id="user-age" class="info-value"></span>
+                        </div>
+                        <div class="info-group">
+                            <i class="fas fa-flag icon"></i>
+                            <span class="info-label">Nationality:</span>
+                            <span id="user-nationality" class="info-value"></span>
+                        </div>
+                        <div class="info-group full-width">
+                            <i class="fas fa-map-marked-alt icon"></i>
+                            <span class="info-label">Full Address:</span>
+                            <span id="user-location-full" class="info-value address-value"></span>
+                        </div>
+                    </div>
+
+                    <div id="contact" class="tab-content">
+                         <div class="info-group full-width">
+                            <i class="fas fa-envelope-open-text icon"></i>
+                            <span class="info-label">Email:</span>
+                            <span id="user-email" class="info-value"></span>
+                        </div>
+                         <div class="info-group full-width">
+                            <i class="fas fa-phone-alt icon"></i>
+                            <span class="info-label">Phone:</span>
+                            <span id="user-phone" class="info-value"></span>
+                        </div>
+                        <div class="info-group full-width">
+                            <i class="fas fa-mobile-alt icon"></i>
+                            <span class="info-label">Cell Phone:</span>
+                            <span id="user-cell" class="info-value"></span>
+                        </div>
+                    </div>
+
+                    <div id="account" class="tab-content">
+                        <div class="info-group full-width">
+                            <i class="fas fa-user-tag icon"></i>
+                            <span class="info-label">Account Username:</span>
+                            <span id="user-login-username" class="info-value"></span>
+                        </div>
+                        <div class="info-group full-width">
+                            <i class="fas fa-id-card icon"></i>
+                            <span class="info-label">Account ID (UUID):</span>
+                            <span id="user-login-uuid" class="info-value uuid-value"></span>
+                        </div>
+                        <div class="info-group full-width">
+                            <i class="fas fa-clock icon"></i>
+                            <span class="info-label">Registration Date:</span>
+                            <span id="user-registered-date" class="info-value"></span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
