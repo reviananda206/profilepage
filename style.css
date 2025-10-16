@@ -1,0 +1,206 @@
+:root {
+    --primary-color: #0b1a3d;
+    --secondary-color: #00416c; 
+    --accent-color: #009cf6; 
+    --bg-light: #f8f9fa;
+    --text-dark: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+}
+
+.loading-state {
+    text-align: center;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.hidden {
+    display: none !important;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+    max-width: 550px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: linear-gradient(120deg, var(--secondary-color), #00416c);
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    position: absolute;
+    bottom: -90px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-body {
+    padding: 110px 30px 30px; 
+    text-align: center;
+}
+
+.user-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.username {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.age-gender {
+    color: #7f8c8d;
+    font-size: 0.95em;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ecf0f1;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    padding: 15px 10px;
+    border: none;
+    background: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: #95a5a6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab-btn:hover {
+    color: var(--secondary-color);
+    background-color: #fcfcfc;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.tab-content-container {
+    padding: 0 15px;
+    text-align: left;
+}
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.tab-content.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    opacity: 1;
+}
+@media (min-width: 400px) {
+    #about.tab-content.active {
+        grid-template-columns: 1fr 1fr;
+    }
+    .full-width {
+        grid-column: span 2;
+    }
+}
+
+.info-group {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.info-label {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 1em;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-top: 2px;
+    word-break: break-word;
+}
+
+.address-value, .uuid-value {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+}
